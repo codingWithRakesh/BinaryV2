@@ -13,7 +13,7 @@ import AdvancedLoadingScreen from "./components/AdvancedLoadingScreen.jsx";
 
 const App = () => {
   const { setIsLogin } = useIsLogin();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const validateCurrentUser = async () => {
@@ -70,6 +70,26 @@ const App = () => {
 
     validateCurrentUser();
   }, [setIsLogin]);
+
+  useEffect(() => {
+    const wakeRenderServers = async () => {
+      setLoading(true);
+
+      try {
+        await Promise.all([
+          axios.get(`${import.meta.env.VITE_SOCKET_SERVER_URL}`),
+          axios.get(`${import.meta.env.VITE_JAVA_URL}/api/v2`),
+          axios.get(`${import.meta.env.VITE_PYTHON_SERVER_URL}`),
+        ]);
+      } catch (error) {
+        console.error("Render wake-up failed:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    wakeRenderServers();
+  }, []);
 
   if (loading) {
     return <AdvancedLoadingScreen />;

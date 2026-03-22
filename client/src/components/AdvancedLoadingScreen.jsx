@@ -101,14 +101,15 @@ const AdvancedLoadingScreen = () => {
           {/* Message */}
           <p className="text-gray-400 text-sm mt-3 max-w-xs leading-relaxed">
             Initializing services... <br />
-            <div className="inline-flex items-center gap-2 mt-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 backdrop-blur-sm">
-              <span className="animate-pulse">⏳</span>
-              <span>
-                Server is waking up{" "}
-                <span className="text-gray-500">(Render free tier)</span>
-              </span>
-            </div>
           </p>
+
+          <div className="inline-flex items-center gap-2 mt-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 backdrop-blur-sm">
+            <span className="animate-pulse">⏳</span>
+            <span>
+              Server is waking up{" "}
+              <span className="text-gray-500">(Render free tier)</span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
