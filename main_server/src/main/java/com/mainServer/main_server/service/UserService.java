@@ -4,7 +4,6 @@ import com.mainServer.main_server.dto.request.PlanChangeRequestDto;
 import com.mainServer.main_server.dto.response.CurrentUserDto;
 import com.mainServer.main_server.dto.response.LoginResponseDto;
 import com.mainServer.main_server.dto.response.PlanChangeResponseDto;
-import org.jspecify.annotations.Nullable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
