@@ -60,9 +60,8 @@ public class DocumentDataServiceImpl implements DocumentDataService {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = (User) auth.getPrincipal();
 
-        Map<String, Object> datas;
         if(webURLRequest.getUrl() == null){
-            throw new RuntimeException("File is required");
+            throw new RuntimeException("URL is required");
         }
 
         Map<String, Object> response = uploadInRAG.uploadURLInRAG(webURLRequest.getUrl(), user.getId());
