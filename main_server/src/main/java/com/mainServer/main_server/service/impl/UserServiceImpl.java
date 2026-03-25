@@ -89,13 +89,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Map<String, Object> createApiKey() {
-        String apiKey = CommonUtil.generateUniqueId();
+        String apiKey;
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = (User) auth.getPrincipal();
 
-        user.setApiKey(apiKey);
-        userRepository.save(user);
+        if(user.getApiKey() != null){
+            apiKey = user.getApiKey();
+        } else {
+            apiKey = CommonUtil.generateUniqueId();
+            user.setApiKey(apiKey);
+            userRepository.save(user);
+        }
 
         return Map.of("apiKey", apiKey);
     }
