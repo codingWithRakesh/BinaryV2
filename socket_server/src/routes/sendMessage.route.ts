@@ -3,7 +3,7 @@ import {
     sendMessage
 } from "../controller/sendMessage.controller.js";
 
-const router = Router();
+const router: Router = Router();
 
 router.route("/query").post(sendMessage);
 

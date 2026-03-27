@@ -1,10 +1,10 @@
-import { Server } from "socket.io";
+import { Server, Socket } from "socket.io";
 import http from "http";
 import {app} from "../app.js";
 import {data} from "../cache/data.js";
 
-const server = http.createServer(app);
-const io = new Server(server, {
+const server: http.Server = http.createServer(app);
+const io: Server = new Server(server, {
     cors: {
         origin: process.env.CLIENT_URL || "http://localhost:5173",
         methods: ["GET", "POST"],
@@ -13,8 +13,8 @@ const io = new Server(server, {
 
 app.set("io", io);
 
-io.on("connection", (socket) => {
-  const userId = socket.handshake.auth.userId;
+io.on("connection", (socket: Socket) => {
+  const userId: string = socket.handshake.auth.userId;
 
   if (!userId) {
     socket.disconnect(true);
