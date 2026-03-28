@@ -1,7 +1,5 @@
-import React from "react";
 import logo from "../assets/logo.png";
 
-// logos
 import reactLogo from "../assets/react.png";
 import javaLogo from "../assets/java.png";
 import pythonLogo from "../assets/python.png";
@@ -22,15 +20,12 @@ const AdvancedLoadingScreen = () => {
   return (
     <div className="min-h-screen bg-[#020617] flex items-center justify-center text-white px-4 overflow-hidden">
       <div className="relative w-full max-w-6xl">
-        {/*  MOBILE VIEW  */}
         <div className="flex flex-col items-center gap-8 md:hidden">
-          {/* Logo */}
           <div className="flex items-center gap-3">
             <img src={logo} alt="logo" className="w-10 h-10" />
             <h1 className="text-2xl font-bold">RAG Flow</h1>
           </div>
 
-          {/* Vertical Flow */}
           <div className="relative flex flex-col items-center">
             {services.map((service, i) => (
               <div key={i} className="flex flex-col items-center">
@@ -42,7 +37,6 @@ const AdvancedLoadingScreen = () => {
                   </span>
                 </div>
 
-                {/* Line */}
                 {i !== services.length - 1 && (
                   <div className="relative h-10 w-0.5 bg-white/10 mt-2 mb-2 overflow-hidden">
                     <div
@@ -54,7 +48,6 @@ const AdvancedLoadingScreen = () => {
               </div>
             ))}
 
-            {/* Final Output */}
             <div className="mt-4 flex items-center gap-2">
               <img src={logo} className="w-6 h-6" />
               <span className="text-sm font-semibold text-white">
@@ -63,7 +56,6 @@ const AdvancedLoadingScreen = () => {
             </div>
           </div>
 
-          {/* Message */}
           <div className="text-center">
             <p className="text-gray-400 text-sm">Initializing services...</p>
 
@@ -77,9 +69,7 @@ const AdvancedLoadingScreen = () => {
           </div>
         </div>
 
-        {/*  DESKTOP VIEW */}
         <div className="hidden md:block h-105 relative">
-          {/* LEFT SIDE */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 space-y-6">
             {services.map((service, i) => (
               <div key={i} className="flex items-center gap-3">
@@ -94,7 +84,6 @@ const AdvancedLoadingScreen = () => {
             ))}
           </div>
 
-          {/* SVG CURVES */}
           <svg
             className="absolute inset-0 w-full h-full"
             viewBox="0 0 800 420"
@@ -134,7 +123,6 @@ const AdvancedLoadingScreen = () => {
             </defs>
           </svg>
 
-          {/* RIGHT SIDE */}
           <div className="absolute right-6 lg:right-10 top-1/2 -translate-y-1/2 flex flex-col items-start max-w-xs">
             <div className="flex items-center gap-3">
               <img src={logo} className="w-12 h-12" />
@@ -158,7 +146,6 @@ const AdvancedLoadingScreen = () => {
         </div>
       </div>
 
-      {/* ANIMATION */}
       <style>
         {`
           @keyframes flowVertical {

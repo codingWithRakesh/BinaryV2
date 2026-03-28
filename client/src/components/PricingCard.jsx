@@ -1,4 +1,3 @@
-import React from "react";
 
 const PricingCard = ({
   title,
@@ -29,14 +28,12 @@ const PricingCard = ({
       ${!disabled && "cursor-pointer hover:scale-[1.02] hover:shadow-indigo-500/20"}
       `}
     >
-      {/* 🔥 Badge */}
       {badge && (
         <span className="absolute top-3 right-3 text-xs bg-indigo-500 px-2 py-1 rounded text-white">
           {badge}
         </span>
       )}
 
-      {/* Top Content */}
       <div>
         <h2 className="text-xl font-semibold text-white">{title}</h2>
 
@@ -63,7 +60,6 @@ const PricingCard = ({
         </ul>
       </div>
 
-      {/* 🔘 Button */}
       <button
         disabled={disabled}
         onClick={(e) => {

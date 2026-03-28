@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import PricingCard from "../components/PricingCard.jsx";
 import pricingData from "../data/pricingData.json";
 import axios from "axios";
@@ -74,7 +74,6 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-[#020617] text-white px-6 py-12">
-      {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-3xl font-bold">Upgrade your plan</h1>
         <p className="text-gray-400 mt-2">
@@ -82,7 +81,6 @@ const Pricing = () => {
         </p>
       </div>
 
-      {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {pricingData.plans.map((plan) => {
           const planPayment = planIdToPayment[plan.id];

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const UploadUrl = ({ onUploadSuccess }) => {
@@ -40,7 +40,6 @@ const UploadUrl = ({ onUploadSuccess }) => {
 
   return (
     <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-5 space-y-4">
-      {/* Header */}
       <div>
         <h2 className="text-sm sm:text-base font-semibold">
           🌐 Add Website URL
@@ -48,7 +47,6 @@ const UploadUrl = ({ onUploadSuccess }) => {
         <p className="text-xs text-gray-400">Crawl and embed website content</p>
       </div>
 
-      {/* Input */}
       <div className="flex flex-col sm:flex-row gap-2">
         <input
           value={url}
@@ -66,7 +64,6 @@ const UploadUrl = ({ onUploadSuccess }) => {
         </button>
       </div>
 
-      {/* Info */}
       <p className="text-[10px] text-gray-500">
         This will extract and embed content from the URL
       </p>

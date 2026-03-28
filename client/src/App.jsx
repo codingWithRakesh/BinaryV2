@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout/Layout.jsx";
@@ -8,7 +8,6 @@ import Pricing from "./pages/Pricing.jsx";
 import TryPage from "./pages/TryPage.jsx";
 import { useIsLogin } from "./contexts/isLoginContext.jsx";
 import { connectSocket, disconnectSocket } from "./socket/socket.js";
-import LoadingScreen from "./components/LoadingScreen.jsx";
 import AdvancedLoadingScreen from "./components/AdvancedLoadingScreen.jsx";
 
 const App = () => {

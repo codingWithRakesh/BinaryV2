@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import UploadDocs from "../components/apiKey/UploadDocs.jsx";
 import ApiKeyCard from "../components/apiKey/ApiKeyCard.jsx";
 import UploadUrl from "../components/apiKey/UploadUrl.jsx";
@@ -50,7 +50,6 @@ const ApiPage = () => {
   return (
     <div className="min-h-screen bg-[#020617] text-white px-6 py-8">
       <div className="max-w-5xl mx-auto space-y-8">
-        {/* Header */}
         <div>
           <h1 className="text-3xl font-bold">RAG Dashboard 🚀</h1>
           <p className="text-gray-400">
@@ -58,18 +57,15 @@ const ApiPage = () => {
           </p>
         </div>
 
-        {/* Upload */}
         <UploadDocs apiKey={apiKey} onUploadSuccess={handleUploadSuccess} />
         <UploadUrl apiKey={apiKey} onUploadSuccess={handleUploadSuccess} />
 
-        {/*  Centered API Key */}
         <div className="flex justify-center">
           <div className="w-full sm:w-125 md:w-150">
             <ApiKeyCard apiKey={apiKey} />
           </div>
         </div>
 
-        {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-4">
           <button
             onClick={() => navigate("/try", { state: { apiKey } })}
@@ -86,7 +82,6 @@ const ApiPage = () => {
           </button>
         </div>
 
-        {/* Docs List */}
         <div className="space-y-2">
           {documents.length === 0 && (
             <p className="text-gray-500 text-sm">No documents uploaded</p>

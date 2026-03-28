@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import ApiKeyModal from "./ApiKeyModal.jsx";
 import { connectSocket, socket } from "../../socket/socket.js";
 
@@ -10,7 +10,6 @@ const ChatSection = ({ externalApiKey = null }) => {
 
   const bottomRef = useRef();
 
-  // Auto scroll
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
@@ -83,10 +82,9 @@ const ChatSection = ({ externalApiKey = null }) => {
 
   return (
     <div className="flex flex-col h-full min-h-0">
-      {/*  Modal */}
+
       {!apiKey && <ApiKeyModal onSave={setApiKey} />}
 
-      {/* Header */}
       <div className="flex justify-between items-center mb-3 shrink-0">
         <h2 className="text-lg sm:text-xl font-semibold">
           💬 Intelligence Chat
@@ -95,7 +93,6 @@ const ChatSection = ({ externalApiKey = null }) => {
         {apiKey && <span className="text-xs text-green-400">Connected ✓</span>}
       </div>
 
-      {/* Messages */}
       <div
         className="flex-1 overflow-y-auto min-h-0 space-y-3 p-3 rounded-xl 
       bg-white/5 backdrop-blur-lg border border-white/10"
@@ -121,11 +118,9 @@ const ChatSection = ({ externalApiKey = null }) => {
 
         {loading && <div className="text-gray-400 text-sm">Typing...</div>}
 
-        {/* 🔥 Auto scroll target */}
         <div ref={bottomRef} />
       </div>
 
-      {/* Input */}
       <div className="mt-3 flex gap-2 shrink-0">
         <input
           value={input}

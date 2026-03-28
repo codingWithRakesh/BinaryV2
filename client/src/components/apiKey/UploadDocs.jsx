@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const UploadDocs = ({ onUploadSuccess, apiKey }) => {
@@ -58,7 +58,6 @@ const UploadDocs = ({ onUploadSuccess, apiKey }) => {
         </p>
       </div>
 
-      {/* Drop Zone */}
       <div
         onDragOver={(e) => {
           e.preventDefault();
@@ -86,7 +85,6 @@ const UploadDocs = ({ onUploadSuccess, apiKey }) => {
         </label>
       </div>
 
-      {/* File Preview */}
       {file && (
         <div className="bg-white/5 border border-white/10 rounded-xl p-3 flex justify-between">
           <span className="truncate text-xs">{file.name}</span>
@@ -94,7 +92,6 @@ const UploadDocs = ({ onUploadSuccess, apiKey }) => {
         </div>
       )}
 
-      {/* Progress */}
       {loading && (
         <div className="w-full bg-gray-800 rounded-full h-1">
           <div
@@ -104,7 +101,6 @@ const UploadDocs = ({ onUploadSuccess, apiKey }) => {
         </div>
       )}
 
-      {/* Button */}
       <button
         onClick={handleUpload}
         disabled={!file || loading}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useIsLogin } from "../contexts/isLoginContext";
 
@@ -37,12 +37,10 @@ const Navbar = () => {
   return (
     <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl">
       <div ref={menuRef}>
-        {/* Navbar */}
         <div
           className="flex items-center justify-between px-6 py-3 rounded-2xl 
         bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg"
         >
-          {/* Left */}
           <div className="flex items-center gap-6">
             <h1
               onClick={() => {
@@ -54,7 +52,6 @@ const Navbar = () => {
               RAG API
             </h1>
 
-            {/* Desktop */}
             <div className="hidden md:flex items-center gap-5">
               <Link to="/" className="text-gray-300 hover:text-white text-sm">
                 Docs
@@ -74,14 +71,13 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Desktop Right */}
           <div className="hidden md:flex items-center gap-4">
             {!isLogin?.isLogin ? (
               <button
                 onClick={handleLogin}
                 className="flex items-center gap-2 bg-[#a3c8d8] text-black px-4 py-2 rounded-lg text-sm hover:bg-gray-200 transition"
               >
-                {/* Google Icon */}
+ 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 48 48"
@@ -119,7 +115,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Button */}
           <button
             className="md:hidden text-white text-xl"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -128,7 +123,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {menuOpen && (
           <div className="mt-3 rounded-xl bg-white/5 backdrop-blur-xl border border-white/10 p-4 flex flex-col gap-3 md:hidden transition-all duration-200">
             <Link

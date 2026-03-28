@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const ApiKeyCard = ({ apiKey }) => {
   const [copied, setCopied] = useState(false);
@@ -10,7 +10,6 @@ const ApiKeyCard = ({ apiKey }) => {
 
   return (
     <div className="bg-white/5 border border-white/10 rounded-xl p-4 space-y-3 shadow-md">
-      {/* Header */}
       <div className="flex justify-between items-center">
         <h2 className="text-sm font-semibold">🔑 API Key</h2>
 
@@ -22,7 +21,6 @@ const ApiKeyCard = ({ apiKey }) => {
         </button>
       </div>
 
-      {/* Key Box */}
       <div className="bg-[#0f172a] px-3 py-2 rounded-md flex items-center justify-between gap-2">
         <span className="break-all text-xs flex-1">{displayKey}</span>
 

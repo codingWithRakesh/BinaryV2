@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const CodeBlock = ({ code }) => {
   const [copied, setCopied] = useState(false);
@@ -16,7 +16,6 @@ const CodeBlock = ({ code }) => {
 
   return (
     <div className="relative bg-[#0f172a] border border-gray-700 rounded-xl p-4 text-sm text-gray-300 overflow-x-auto">
-      {/* Copy Button */}
       <button
         onClick={handleCopy}
         className="absolute top-3 right-3 text-xs px-3 py-1 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 transition"
@@ -24,7 +23,6 @@ const CodeBlock = ({ code }) => {
         {copied ? "Copied ✓" : "Copy"}
       </button>
 
-      {/* Code */}
       <pre className="whitespace-pre-wrap">{code}</pre>
     </div>
   );
